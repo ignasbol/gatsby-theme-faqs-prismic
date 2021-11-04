@@ -207,11 +207,6 @@ query FrequentlyAskedQuestionsQuery {
       metaDescription: meta_description {
         html
         text
-      },
-      openGraphImage: open_graph_image {
-        alt
-        copyright
-        url
       }
     }
   }
