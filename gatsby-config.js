@@ -16,6 +16,7 @@ module.exports = ({
         repositoryName: prismicRepositoryName,
         accessToken: prismicAccessToken,
         schemas: {
+          legal: require('./src/schemas/legal.json'),
           frequently_asked_questions: require('./src/schemas/frequently-asked-questions.json'),
           question_category: require('./src/schemas/question-category.json'),
         },
