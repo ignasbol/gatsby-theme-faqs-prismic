@@ -8,9 +8,7 @@ const wrapper = promise => promise.then((result) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const faqPageTemplate = require.resolve('./src/templates/faq.js');
-
-  const faqPages = await wrapper(
+  const pages = await wrapper(
     graphql(`
       {
         allPrismicFrequentlyAskedQuestions {
@@ -21,33 +19,6 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-      }
-    `),
-  );
-
-  const faqPageList = faqPages.data.allPrismicFrequentlyAskedQuestions.edges;
-
-  /* ---------------------------------------------
-  = Create an individual page for each Information page =
-  ----------------------------------------------- */
-
-  faqPageList.forEach((edge) => {
-    // The uid you assigned in Prismic is the slug!
-    createPage({
-      path: `/${edge.node.uid}/`,
-      component: faqPageTemplate,
-      context: {
-        // Pass the unique ID (uid) through context so the template can filter by it
-        uid: edge.node.uid,
-      },
-    });
-  });
-
-  const legalPageTemplate = require.resolve('./src/templates/legal.js');
-
-  const legalPages = await wrapper(
-    graphql(`
-      {
         allPrismicLegal {
           edges {
             node {
@@ -60,12 +31,26 @@ exports.createPages = async ({ graphql, actions }) => {
     `),
   );
 
-  const legalPageList = legalPages.data.allPrismicLegal.edges;
+  const faqPageTemplate = require.resolve('./src/templates/faq.js');
+  const legalPageTemplate = require.resolve('./src/templates/legal.js');
 
   /* ---------------------------------------------
   = Create an individual page for each Information page =
   ----------------------------------------------- */
+  const faqPageList = pages.data.allPrismicFrequentlyAskedQuestions.edges;
+  faqPageList.forEach((edge) => {
+    // The uid you assigned in Prismic is the slug!
+    createPage({
+      path: `/${edge.node.uid}/`,
+      component: faqPageTemplate,
+      context: {
+        // Pass the unique ID (uid) through context so the template can filter by it
+        uid: edge.node.uid,
+      },
+    });
+  });
 
+  const legalPageList = pages.data.allPrismicLegal.edges;
   legalPageList.forEach((edge) => {
     // The uid you assigned in Prismic is the slug!
     createPage({
