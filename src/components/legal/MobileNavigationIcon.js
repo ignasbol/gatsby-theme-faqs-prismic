@@ -9,7 +9,7 @@ const MobileNavigationIcon = () => (
     sx={{
       height: '12px',
       width: '8px',
-      fill: theme.colors.primary
+      fill: 'text',
     }}
   >
     <path d="M9.6.154l1.697 1.697L5.65 7.5 0 1.851 1.697.154 5.65 4.106z" fillRule="nonzero" />

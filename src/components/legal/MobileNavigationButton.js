@@ -24,7 +24,7 @@ const MobileNavigationButton = ({
       alignItems: 'center',
       justifyContent: 'center',
       width: '100%',
-      backgroundColor: 'grey',
+      backgroundColor: 'white',
       padding: '21px 20px 20px',
     }}
   >
@@ -37,7 +37,7 @@ const MobileNavigationButton = ({
         fontWeight: 'bold',
         textTransform: 'uppercase',
         textAlign: 'center',
-        color: 'primary',
+        color: 'text',
         marginRight: '10px',
       }}
     >
