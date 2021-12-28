@@ -53,6 +53,9 @@ const LegalPageHero = ({ title }) => (
           to={'/'}
           sx={{
             color: 'text',
+            '&:hover': {
+              color: 'primaryDark',
+            },
           }}
         >
           <span
