@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui';
+import { Link } from 'gatsby';
 
 export const FaqHero = ({ title }) => (
   <section
@@ -51,6 +52,23 @@ export const FaqHero = ({ title }) => (
         >
           {title}
         </Styled.h1>
+        <Link
+          className="back-to-home-link"
+          to={'/'}
+          sx={{
+            color: 'text',
+          }}
+        >
+          <span
+            sx={{
+              fontSize: 1,
+              letterSpacing: 1,
+              textTransform: 'uppercase',
+            }}
+          >
+            Back to home
+          </span>
+        </Link>
       </div>
       <div
         className="outer-shadow"
