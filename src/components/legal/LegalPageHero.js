@@ -41,6 +41,7 @@ const LegalPageHero = ({ title }) => (
         <Styled.h1
           className="page-title"
           sx={{
+            color: 'black',
             maxWidth: '600px',
             marginBottom: '40px',
           }}
@@ -51,7 +52,7 @@ const LegalPageHero = ({ title }) => (
           className="back-to-home-link"
           to={'/'}
           sx={{
-            color: 'primary',
+            color: 'text',
           }}
         >
           <span
