@@ -45,7 +45,7 @@ export const FaqHero = ({ title }) => (
         <Styled.h1
           className="page-title"
           sx={{
-            color: 'black',
+            color: 'text',
             maxWidth: '500px',
             marginBottom: '40px',
           }}

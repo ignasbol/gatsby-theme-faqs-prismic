@@ -41,7 +41,7 @@ const LegalPageHero = ({ title }) => (
         <Styled.h1
           className="page-title"
           sx={{
-            color: 'black',
+            color: 'text',
             maxWidth: '600px',
             marginBottom: '40px',
           }}
