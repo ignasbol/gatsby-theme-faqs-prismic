@@ -3,7 +3,7 @@ import { jsx, Styled } from 'theme-ui';
 import { Link } from 'gatsby';
 
 
-const LegalPageHero = ({ title, siteName, homePath }) => (
+const LegalPageHero = ({ title }) => (
   <section
     className="legal-page-hero"
     sx={{
@@ -38,19 +38,6 @@ const LegalPageHero = ({ title, siteName, homePath }) => (
           'z-index': '3',
         }}
       >
-        {siteName && (
-          <span
-            sx={{
-              display: 'block',
-              fontSize: 1,
-              letterSpacing: 1,
-              textTransform: 'uppercase',
-              marginBottom: '20px',
-            }}
-          >
-            {siteName}
-          </span>
-        )}
         <Styled.h1
           className="page-title"
           sx={{
@@ -62,7 +49,7 @@ const LegalPageHero = ({ title, siteName, homePath }) => (
         </Styled.h1>
         <Link
           className="back-to-home-link"
-          to={homePath}
+          to={'/'}
           sx={{
             color: 'primary',
           }}

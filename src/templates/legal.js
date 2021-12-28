@@ -57,12 +57,6 @@ class LegalPageTemplate extends Component {
     const activeSection = sectionsInView.length > 0 ? sectionsInView.reduce((a, b) => Math.min(a, b)) : 0
     const {
       data: {
-        site: {
-          siteMetadata: {
-            homePath = '/',
-            siteName,
-          },
-        },
         page: {
           data: pageData,
         },
@@ -93,8 +87,6 @@ class LegalPageTemplate extends Component {
           <LegalPageHero
             title={bannerTitle}
             subtitle={bannerSubtitle}
-            homePath={homePath}
-            siteName={siteName}
           />
           <LegalPageBody
             activeSection={activeSection}
@@ -111,12 +103,6 @@ export default LegalPageTemplate
 
 export const pageQuery = graphql`
   query LegalPageBySlug($uid: String!) {
-    site {
-      siteMetadata {
-        siteName,
-        homePath,
-      }
-    },
     page: prismicLegal(uid: { eq: $uid }) {
       data {
         pageTitle: page_name {
